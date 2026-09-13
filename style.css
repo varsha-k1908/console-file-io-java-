@@ -1,0 +1,950 @@
+/* =====================================================
+   JAVA SHINOBI ACADEMY
+   Naruto-inspired anime / advanced technology theme
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #090909;
+    color: #f5f5f5;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 72px;
+    padding: 15px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: rgba(5, 5, 5, 0.96);
+    border-bottom: 1px solid #ff6a00;
+
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    color: #ff7200;
+    white-space: nowrap;
+}
+
+.logo-symbol {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #ff7200;
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff7200;
+}
+
+.chakra-btn {
+    border: 1px solid #ff7200;
+    background: transparent;
+    color: #ff7200;
+
+    padding: 9px 14px;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 90vh;
+    padding: 100px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    background:
+        radial-gradient(circle at 80% 50%, rgba(255, 100, 0, 0.18), transparent 35%),
+        linear-gradient(135deg, #090909, #111111);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(255, 100, 0, 0.2);
+    border-radius: 50%;
+
+    right: -200px;
+    top: 80px;
+}
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.rank {
+    color: #ff7200;
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #ff7200;
+    display: block;
+
+    text-shadow:
+        0 0 15px rgba(255, 100, 0, 0.5);
+}
+
+.hero-text {
+    color: #bdbdbd;
+    font-size: 17px;
+    max-width: 650px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    text-decoration: none;
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #ff7200;
+    color: #080808;
+    font-weight: 800;
+
+    clip-path: polygon(
+        8px 0,
+        100% 0,
+        100% calc(100% - 8px),
+        calc(100% - 8px) 100%,
+        0 100%,
+        0 8px
+    );
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 100, 0, 0.5);
+}
+
+.secondary-btn {
+    border: 1px solid #ff7200;
+    color: #ff7200;
+}
+
+.secondary-btn:hover {
+    background: #ff7200;
+    color: #000;
+}
+
+.scroll-text {
+    margin-top: 45px;
+    color: #777;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* ================= CHAKRA CIRCLE ================= */
+
+.chakra-circle {
+    width: 350px;
+    height: 350px;
+
+    border: 2px solid #ff7200;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: rotateCircle 18s linear infinite;
+
+    box-shadow:
+        0 0 30px rgba(255, 100, 0, 0.25),
+        inset 0 0 30px rgba(255, 100, 0, 0.1);
+}
+
+.chakra-inner {
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px dashed #ff7200;
+
+    animation: counterRotate 18s linear infinite;
+}
+
+.chakra-inner span {
+    font-family: "Orbitron", sans-serif;
+    font-size: 30px;
+    color: #ff7200;
+}
+
+@keyframes rotateCircle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes counterRotate {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    padding: 100px 8%;
+    background: #0d0d0d;
+}
+
+.dark-section {
+    background:
+        linear-gradient(
+            135deg,
+            #090909,
+            #111111
+        );
+}
+
+.orange-section {
+    background:
+        linear-gradient(
+            135deg,
+            #1a0d05,
+            #0c0c0c
+        );
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 55px;
+}
+
+.small-title {
+    font-family: "Orbitron", sans-serif;
+    color: #ff7200;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 5vw, 48px);
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #aaa;
+}
+
+/* ================= CARDS ================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.info-card {
+    padding: 30px;
+
+    background: #141414;
+    border: 1px solid #292929;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+    border-color: #ff7200;
+}
+
+.info-card.featured {
+    border-color: #ff7200;
+    background:
+        linear-gradient(
+            145deg,
+            #201007,
+            #141414
+        );
+}
+
+.card-icon {
+    font-size: 35px;
+    color: #ff7200;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: #aaa;
+}
+
+.info-card ul {
+    margin-top: 18px;
+    padding-left: 20px;
+    color: #ccc;
+}
+
+.tech-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tech-tags span {
+    border: 1px solid #ff7200;
+    color: #ff7200;
+
+    padding: 5px 9px;
+    border-radius: 15px;
+
+    font-size: 11px;
+}
+
+/* ================= FLOW ================= */
+
+.flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.flow-box {
+    width: 190px;
+    padding: 25px;
+
+    text-align: center;
+
+    background: #131313;
+    border: 1px solid #333;
+}
+
+.flow-box span {
+    color: #ff7200;
+    font-family: "Orbitron", sans-serif;
+}
+
+.flow-box strong {
+    display: block;
+    font-family: "Orbitron", sans-serif;
+    margin: 10px 0;
+}
+
+.flow-box p {
+    color: #888;
+    font-size: 13px;
+}
+
+.arrow {
+    color: #ff7200;
+    font-size: 30px;
+}
+
+/* ================= CONSOLE ================= */
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.subheading {
+    font-family: "Orbitron", sans-serif;
+    color: #ff7200;
+    margin-bottom: 20px;
+}
+
+.command-list {
+    margin-top: 30px;
+}
+
+.command-list div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+.command-list code {
+    color: #ff7200;
+}
+
+.command-list span {
+    color: #888;
+}
+
+/* ================= CODE ================= */
+
+/*
+IMPORTANT:
+Dark code background is explicitly set.
+This prevents the previous white-block problem.
+*/
+
+.code-card,
+.large-code-card {
+    background: #050505 !important;
+
+    border: 1px solid #ff7200;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 25px rgba(255, 100, 0, 0.08);
+}
+
+.code-header {
+    background: #181818 !important;
+
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #333;
+
+    color: #ff7200;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+}
+
+.code-header button {
+    background: #ff7200;
+    color: #050505;
+
+    border: none;
+    padding: 7px 12px;
+
+    font-weight: 800;
+    cursor: pointer;
+
+    border-radius: 3px;
+}
+
+pre {
+    display: block;
+
+    background: #050505 !important;
+    color: #f2f2f2 !important;
+
+    padding: 25px;
+
+    overflow-x: auto;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    white-space: pre;
+}
+
+pre code {
+    display: block;
+
+    background: transparent !important;
+    color: #f2f2f2 !important;
+
+    font-family: Consolas, "Courier New", monospace;
+}
+
+/* ================= OUTPUT ================= */
+
+.output-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.method-card {
+    background: #151515;
+    padding: 25px;
+    border-left: 3px solid #ff7200;
+}
+
+.method-card h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #ff7200;
+    font-size: 18px;
+}
+
+.method-card p {
+    color: #aaa;
+    margin: 12px 0;
+}
+
+.method-card code {
+    display: block;
+
+    background: #050505;
+    color: #f5f5f5;
+
+    padding: 10px;
+
+    overflow-x: auto;
+}
+
+/* ================= FILE SECTION ================= */
+
+.feature-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.feature-layout.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.feature-text h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #ff7200;
+    margin: 20px 0 10px;
+}
+
+.feature-text p {
+    color: #aaa;
+}
+
+.note {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-left: 4px solid #ff7200;
+
+    background: #16100c;
+    color: #bbb;
+}
+
+.orange-note {
+    background: #201007;
+}
+
+/* ================= TABLE ================= */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background: #ff7200;
+    color: #080808;
+
+    font-family: "Orbitron", sans-serif;
+}
+
+td {
+    color: #ccc;
+}
+
+tr:hover td {
+    background: #171717;
+}
+
+/* ================= MISSIONS ================= */
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.mission-card {
+    position: relative;
+
+    padding: 30px;
+
+    background: #121212;
+    border: 1px solid #292929;
+
+    min-height: 190px;
+
+    transition: 0.3s;
+}
+
+.mission-card:hover {
+    border-color: #ff7200;
+    transform: translateY(-5px);
+}
+
+.mission-card span {
+    color: #ff7200;
+    font-family: "Orbitron", sans-serif;
+}
+
+.mission-card h3 {
+    margin: 15px 0 10px;
+}
+
+.mission-card p {
+    color: #999;
+}
+
+/* ================= KNOWLEDGE ================= */
+
+.knowledge-list {
+    max-width: 900px;
+    margin: auto;
+}
+
+.knowledge-list div {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #292929;
+}
+
+.knowledge-list span {
+    color: #ff7200;
+    font-size: 22px;
+}
+
+.knowledge-list p {
+    color: #bbb;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-section {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 100, 0, 0.15),
+            #080808 60%
+        );
+}
+
+.quiz-box {
+    max-width: 800px;
+    margin: auto;
+
+    padding: 40px;
+
+    border: 1px solid #ff7200;
+    background: #101010;
+
+    text-align: center;
+}
+
+.quiz-box h3 {
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 30px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.options button {
+    padding: 15px;
+
+    background: #191919;
+    border: 1px solid #333;
+
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.options button:hover {
+    border-color: #ff7200;
+    color: #ff7200;
+}
+
+#quizResult {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #ff7200;
+}
+
+/* ================= CONCLUSION ================= */
+
+.conclusion {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #201007,
+            #080808
+        );
+}
+
+.conclusion div {
+    max-width: 800px;
+    margin: auto;
+}
+
+.conclusion h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.conclusion p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: #050505;
+    border-top: 1px solid #ff7200;
+}
+
+.footer-logo {
+    font-family: "Orbitron", sans-serif;
+    color: #ff7200;
+
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #777;
+    font-size: 13px;
+}
+
+.footer-line {
+    width: 100px;
+    height: 1px;
+
+    background: #ff7200;
+
+    margin: 20px auto;
+}
+
+footer small {
+    color: #555;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .chakra-circle {
+        display: none;
+    }
+
+    .info-grid,
+    .output-grid,
+    .mission-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .split-layout,
+    .feature-layout,
+    .feature-layout.reverse {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 12px 4%;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+
+    .chakra-btn {
+        font-size: 11px;
+        padding: 7px 10px;
+    }
+
+    .hero {
+        padding: 80px 6%;
+        min-height: 85vh;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .info-grid,
+    .output-grid,
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-box {
+        padding: 25px;
+    }
+
+    .conclusion h2 {
+        font-size: 32px;
+    }
+
+    pre {
+        font-size: 12px;
+        padding: 18px;
+    }
+
+    .code-header {
+        font-size: 9px;
+    }
+}
